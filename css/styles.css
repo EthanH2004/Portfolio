@@ -304,6 +304,27 @@ sup { font-size: 0.6em; }
   text-wrap: pretty;
 }
 
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.chip:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.chip:active { transform: scale(0.97); }
+.chip .mono { font-size: 0.6875rem; }
+.chip-ic { width: 15px; height: 15px; flex-shrink: 0; }
+
 .hero-meta {
   display: flex;
   flex-direction: column;

@@ -30,7 +30,8 @@ holding placeholder content. All in `index.html` unless noted.
 
 ## Links
 - [x] GitHub (github.com/EthanH2004) + LinkedIn (linkedin.com/in/ethan-hennenhoefer) — done; X removed per Ethan
-- [ ] Consider: resume PDF link, calendar booking link for the Practice CTA
+- [x] Resume PDF — hero contact chips (GitHub / LinkedIn / Email / Resume) + footer link
+- [ ] Consider: calendar booking link for the Practice CTA
 
 ## Meta
 - [x] `og:image` — generated from the hero (assets/og.png) + og:url + twitter card

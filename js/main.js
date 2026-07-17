@@ -233,22 +233,6 @@
       });
     });
 
-    /* Phones drift & tilt with scroll — the "spin as you scroll" nod */
-    document.querySelectorAll("[data-phone]").forEach((el) => {
-      const dir = parseInt(el.getAttribute("data-phone"), 10);
-      gsap.to(el, {
-        y: dir === 0 ? -30 : 26,
-        rotation: `+=${dir * 4}`,
-        ease: "none",
-        scrollTrigger: {
-          trigger: el.closest(".project-media"),
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.6,
-        },
-      });
-    });
-
     /* Marquee — infinite loop, speeds up with scroll velocity */
     const track = document.querySelector("[data-marquee]");
     if (track) {

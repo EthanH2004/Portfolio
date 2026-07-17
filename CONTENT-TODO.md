@@ -9,15 +9,18 @@ holding placeholder content. All in `index.html` unless noted.
       exists, the old scroll-scrub hook is in git-less history: ask Claude to re-add.
 - [ ] **Scribe screenshot** (`.browser` mockup) — replace skeleton UI with a real
       product screenshot (keep the browser chrome frame, swap `.browser-body` for an `<img>`).
-- [ ] **Workout app screenshots × 3** (`.phones`) — replace each `.phone-screen`
-      contents with real app screenshots (`<img>` fills the screen div).
+- [x] **Onset (workout app)** — done. Real composite in place
+      (assets/onset-composite.png + @2x). 10 raw screenshots live in
+      ~/Desktop/Onset-Portfolio-Screenshots/raw if a different layout is
+      wanted. Careful: 04-profile and 07-settings show a real email; keep
+      them off the public site unless blurred.
 - [x] **Portrait** — done (assets/portrait.jpg, grayscale treatment, hover
       reveals color; delete the `.portrait-img` filter lines in styles.css
       for always-color).
 
 ## Copy that is plausible-but-placeholder
 - [ ] Scribe description + meta year/tags ("2025 · AI · Product")
-- [ ] Workout app real name (currently literally "Workout App"), description, meta
+- [x] Workout app real name + copy — it's **Onset** (2026 · iOS · Mobile)
 - [ ] Practice section blurb + the four service descriptions — tune to the real offer
 - [ ] "Map / Automate / Ship & run" step copy
 - [ ] About bio (2 paragraphs + lede) — written in Ethan's probable voice, verify

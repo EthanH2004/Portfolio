@@ -43,10 +43,11 @@
     <p class="head-role mono" aria-hidden="true">Software&nbsp;·&nbsp;AI&nbsp;·&nbsp;Data</p>
 
     <nav class="head-nav" aria-label="Primary">
-      <a href="#about"    class="head-link mono" data-scroll-to>About</a>
-      <a href="#practice" class="head-link mono" data-scroll-to>Practice</a>
-      <a href="#work"     class="head-link mono" data-scroll-to>Work</a>
-      <a href="#contact"  class="head-link mono" data-scroll-to>Contact</a>
+      <a href="#about"   class="head-link mono" data-scroll-to>About</a>
+      <a href="#skills"  class="head-link mono" data-scroll-to>Skills</a>
+      <a href="#now"     class="head-link mono" data-scroll-to>Now</a>
+      <a href="#work"    class="head-link mono" data-scroll-to>Work</a>
+      <a href="#contact" class="head-link mono" data-scroll-to>Contact</a>
     </nav>
 
     <button class="menu-btn mono" data-menu-btn aria-expanded="false" aria-controls="site-menu">Menu</button>
@@ -55,10 +56,11 @@
   <!-- Mobile full-screen menu -->
   <div class="menu" id="site-menu" data-menu hidden>
     <nav class="menu-nav" aria-label="Menu">
-      <a href="#about"    class="menu-link" data-scroll-to><span class="menu-index mono">01</span>About</a>
-      <a href="#practice" class="menu-link" data-scroll-to><span class="menu-index mono">02</span>Practice</a>
-      <a href="#work"     class="menu-link" data-scroll-to><span class="menu-index mono">03</span>Work</a>
-      <a href="#contact"  class="menu-link" data-scroll-to><span class="menu-index mono">04</span>Contact</a>
+      <a href="#about"   class="menu-link" data-scroll-to><span class="menu-index mono">01</span>About</a>
+      <a href="#skills"  class="menu-link" data-scroll-to><span class="menu-index mono">02</span>Skills</a>
+      <a href="#now"     class="menu-link" data-scroll-to><span class="menu-index mono">03</span>Now</a>
+      <a href="#work"    class="menu-link" data-scroll-to><span class="menu-index mono">04</span>Work</a>
+      <a href="#contact" class="menu-link" data-scroll-to><span class="menu-index mono">05</span>Contact</a>
     </nav>
     <div class="menu-foot mono">
       <a href="mailto:ethanai@hennenhoefer.org">ethanai@hennenhoefer.org</a>
@@ -160,54 +162,85 @@
             of a job, so people can do the interesting parts.
           </p>
           <p class="about-copy" data-reveal>
-            I’m a software engineer and data scientist. Most days you’ll find
+            I’m an AI consultant and software engineer. Most days you’ll find
             me wiring Claude into a business process that used to eat
-            someone’s afternoon, or building the product around it: websites,
-            SaaS platforms, and mobile apps, end to end.
+            someone’s afternoon, or building the product around it: web apps,
+            data pipelines, and mobile apps, end to end.
           </p>
           <p class="about-copy" data-reveal>
             I like small teams, sharp scopes, and software that quietly earns
             its keep. If it saves an hour a day, it was worth building well.
           </p>
 
-          <dl class="toolbox" data-reveal>
-            <div class="tool-col">
-              <dt class="mono">AI / ML</dt>
-              <dd>Claude&nbsp;API · Agents · RAG · Python</dd>
-            </div>
-            <div class="tool-col">
-              <dt class="mono">Web</dt>
-              <dd>TypeScript · React · Next.js · Node</dd>
-            </div>
-            <div class="tool-col">
-              <dt class="mono">Mobile</dt>
-              <dd>Swift · SwiftUI · React&nbsp;Native</dd>
-            </div>
-            <div class="tool-col">
-              <dt class="mono">Data</dt>
-              <dd>Python · SQL · pandas · dashboards</dd>
-            </div>
+          <dl class="edu" data-reveal>
+            <dt class="mono">Education</dt>
+            <dd>B.S. Information Technology, Data Analytics Track · Texas Tech University · May 2026</dd>
+            <dd class="edu-detail">Coursework: Database Systems, Data Analytics, Software Engineering, Cloud Computing</dd>
           </dl>
         </div>
       </div>
     </section>
 
-<section class="section practice" id="practice" aria-labelledby="practice-title">
+    <!-- ============================== SKILLS ============================== -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
       <header class="section-head">
         <p class="section-index mono" data-reveal>02</p>
-        <h2 class="section-title" id="practice-title"><span class="mask"><span class="mask-inner" data-reveal-title>The Practice</span></span></h2>
-        <p class="section-count mono" data-reveal>( AI Consulting )</p>
+        <h2 class="section-title" id="skills-title"><span class="mask"><span class="mask-inner" data-reveal-title>Skills</span></span></h2>
+        <p class="section-count mono" data-reveal>( Toolbox )</p>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+
+      <ul class="skill-grid">
+        <li class="skill-cell" data-reveal>
+          <p class="skill-label mono">AI &amp; Claude</p>
+          <p class="skill-items">Claude Code · Agent skills · MCP servers &amp; connectors · Claude API · RAG with vector databases · Prompt design · AI workflow automation</p>
+        </li>
+        <li class="skill-cell" data-reveal>
+          <p class="skill-label mono">Languages</p>
+          <p class="skill-items">Python · SQL · JavaScript / TypeScript · C# · R</p>
+        </li>
+        <li class="skill-cell" data-reveal>
+          <p class="skill-label mono">Engineering</p>
+          <p class="skill-items">Full&#8209;stack web apps · REST APIs · Mobile apps (iOS) · Playwright &amp; headless browser automation</p>
+        </li>
+        <li class="skill-cell" data-reveal>
+          <p class="skill-label mono">Data</p>
+          <p class="skill-items">ETL / ELT pipelines · Data modeling · Analytics &amp; dashboards</p>
+        </li>
+        <li class="skill-cell" data-reveal>
+          <p class="skill-label mono">Platforms</p>
+          <p class="skill-items">Supabase · Vercel · Microsoft Azure · ServiceNow · Git / Azure DevOps</p>
+        </li>
+        <li class="skill-cell" data-reveal>
+          <p class="skill-label mono">Working with people</p>
+          <p class="skill-items">Agile / Scrum · Stakeholder communication · Technical documentation · Training teams on AI tools</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================== NOW ============================== -->
+    <section class="section practice" id="now" aria-labelledby="now-title">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>03</p>
+        <h2 class="section-title" id="now-title"><span class="mask"><span class="mask-inner" data-reveal-title>Now</span></span></h2>
+        <p class="section-count mono" data-reveal>( Current )</p>
         <span class="section-rule" data-rule aria-hidden="true"></span>
       </header>
 
       <div class="practice-grid">
         <div class="practice-intro">
           <div class="practice-sticky">
-            <h3 class="practice-lede" data-reveal>AI that actually does the&nbsp;work.</h3>
+            <h3 class="practice-lede" data-reveal>Right now, I’m all&nbsp;in on&nbsp;AI.</h3>
             <p class="practice-copy" data-reveal>
-              Through my consulting practice I help companies hand repetitive
-              processes over to AI. I map the workflow, automate it with
-              Claude, and ship it as a tool your team actually uses.
+              I work as an independent AI consultant in Austin. I’m the
+              embedded AI partner for a real estate brokerage, and I’ve
+              consulted for teams at Capital Factory, Austin’s startup
+              incubator, on AI adoption and workflow automation.
+            </p>
+            <p class="practice-copy" data-reveal>
+              The rest of my time goes to the Austin GenAI Meetup, which I
+              co&#8209;organize, and to going deeper on AI engineering,
+              safety, and privacy.
             </p>
             <a class="btn" href="mailto:ethanai@hennenhoefer.org?subject=Automation%20project" data-reveal>
               <span>Start a conversation</span>
@@ -220,29 +253,22 @@
           <li class="service" data-reveal>
             <span class="service-index mono">01</span>
             <div class="service-body">
-              <h4 class="service-title">Process Automation</h4>
-              <p class="service-desc">Claude&#8209;powered agents and pipelines that take over the repetitive work: documents, data entry, reporting, operations.</p>
+              <h4 class="service-title">Client work</h4>
+              <p class="service-desc">Embedded automation for real teams: Claude agent skills that turn hours of listing and marketing work into minutes, a custom MCP connector to live MLS data, RAG pipelines with vector databases, and a social&#8209;media web app that staff use every day.</p>
             </div>
           </li>
           <li class="service" data-reveal>
             <span class="service-index mono">02</span>
             <div class="service-body">
-              <h4 class="service-title">Product Engineering</h4>
-              <p class="service-desc">Full websites and SaaS apps, from the first wireframe to a deployed product with real users.</p>
+              <h4 class="service-title">Community</h4>
+              <p class="service-desc">Co&#8209;organizer of the Austin GenAI Meetup at Capital Factory: hands&#8209;on workshops where attendees build a working AI meeting&#8209;brief agent in breakout groups.</p>
             </div>
           </li>
           <li class="service" data-reveal>
             <span class="service-index mono">03</span>
             <div class="service-body">
-              <h4 class="service-title">Mobile Apps</h4>
-              <p class="service-desc">Clean, native&#8209;feeling apps for iOS and Android.</p>
-            </div>
-          </li>
-          <li class="service" data-reveal>
-            <span class="service-index mono">04</span>
-            <div class="service-body">
-              <h4 class="service-title">Data Science</h4>
-              <p class="service-desc">Models, dashboards, and pipelines that turn the data you already have into decisions.</p>
+              <h4 class="service-title">Learning</h4>
+              <p class="service-desc">Going deeper on AI engineering, safety, and privacy, and what it takes to put AI into real companies responsibly.</p>
             </div>
           </li>
         </ul>
@@ -270,7 +296,7 @@
 
 <section class="section work" id="work" aria-labelledby="work-title">
       <header class="section-head">
-        <p class="section-index mono" data-reveal>03</p>
+        <p class="section-index mono" data-reveal>04</p>
         <h2 class="section-title" id="work-title"><span class="mask"><span class="mask-inner" data-reveal-title>Selected Work</span></span></h2>
         <p class="section-count mono" data-reveal>( 02 )</p>
         <span class="section-rule" data-rule aria-hidden="true"></span>
@@ -308,20 +334,26 @@
             call and guests install nothing. Chrome extension, Supabase Realtime,
             and serverless Claude evals, built end to end.
           </p>
-          <a class="project-link mono" data-reveal href="https://scribe-meets.vercel.app" target="_blank" rel="noopener">Visit scribe-meets.vercel.app&ensp;↗</a>
+          <div class="project-actions" data-reveal>
+            <a class="project-link mono" href="scribe.html">Read the case study&ensp;→</a>
+            <a class="project-link mono" href="https://scribe-meets.vercel.app" target="_blank" rel="noopener">Visit site&ensp;↗</a>
+          </div>
         </div>
       </article>
 
       <!-- ————— Project 02 · Workout app ————— -->
-      <article class="project" id="project-workout" data-cursor="Case study soon">
-        <div class="project-media" data-reveal>
-          <div class="media-inner media-photo">
-            <img src="assets/onset-composite.png"
-                 srcset="assets/onset-composite.png 1x, assets/onset-composite@2x.png 2x"
-                 alt="Five screens of Onset for iOS: routines, an estimated 1RM chart for bench press, the Ready to lift dashboard, weekly progress, and live set logging"
-                 width="1920" height="1080" loading="lazy" data-parallax="6" />
+      <article class="project" id="project-workout">
+        <a class="project-media-link" href="onset.html" data-cursor="Case study →"
+           aria-label="Read the Onset case study">
+          <div class="project-media" data-reveal>
+            <div class="media-inner media-photo">
+              <img src="assets/onset-composite.png"
+                   srcset="assets/onset-composite.png 1x, assets/onset-composite@2x.png 2x"
+                   alt="Five screens of Onset for iOS: routines, an estimated 1RM chart for bench press, the Ready to lift dashboard, weekly progress, and live set logging"
+                   width="1920" height="1080" loading="lazy" data-parallax="6" />
+            </div>
           </div>
-        </div>
+        </a>
 
         <div class="project-info">
           <div class="project-titlerow" data-reveal>
@@ -332,8 +364,12 @@
             An iOS workout tracker that makes logging a set quick enough that
             you actually do it. Programs, live session logging, and charts
             that show strength moving: weekly volume, personal records,
-            estimated 1RM trends. Native iOS, synced with Supabase.
+            estimated 1RM trends. Native iOS, synced with Supabase, built
+            end to end with Claude Code, and in daily use.
           </p>
+          <div class="project-actions" data-reveal>
+            <a class="project-link mono" href="onset.html">Read the case study&ensp;→</a>
+          </div>
         </div>
       </article>
 

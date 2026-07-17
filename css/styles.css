@@ -687,6 +687,159 @@ sup { font-size: 0.6em; }
 }
 .tool-col dd { font-size: 0.9375rem; color: var(--ink); }
 
+/* ------------------------------ Skills ------------------------------ */
+.skill-grid {
+  margin-top: clamp(48px, 6vw, 80px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.skill-cell {
+  background: var(--paper);
+  padding: clamp(24px, 2.6vw, 40px);
+}
+.skill-label { color: var(--blue); }
+.skill-items {
+  margin-top: clamp(28px, 3.5vw, 56px);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+
+/* education */
+.edu { margin-top: clamp(40px, 4vw, 64px); max-width: 58ch; }
+.edu dt {
+  color: var(--ink-3);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.edu dd { font-size: 0.9375rem; color: var(--ink); }
+.edu .edu-detail { margin-top: 6px; color: var(--ink-2); }
+
+/* project action links */
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+
+/* ------------------------------ Case pages ------------------------------ */
+.case {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: calc(var(--head-h) + clamp(48px, 7vw, 96px)) var(--pad) 0;
+}
+.case-kicker { color: var(--blue); }
+.case-title {
+  margin-top: 14px;
+  font-size: clamp(3.25rem, 9.5vw, 8rem);
+  line-height: 0.95;
+  font-weight: 650;
+  font-stretch: 117%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.case-lede {
+  margin-top: clamp(24px, 3vw, 40px);
+  font-size: clamp(1.1875rem, 1.8vw, 1.5rem);
+  line-height: 1.45;
+  color: var(--ink-2);
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+.case-meta {
+  margin-top: clamp(36px, 4.5vw, 56px);
+  border-top: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 32px;
+}
+.case-meta > div { padding-block: 18px 4px; }
+.case-meta dt { color: var(--ink-3); }
+.case-meta dd { margin-top: 8px; font-size: 0.9375rem; color: var(--ink); }
+.case-meta dd a { color: var(--blue); }
+.case-meta dd a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.case-hero { margin-top: clamp(40px, 5vw, 72px); }
+.case-frame {
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  overflow: hidden;
+}
+.case-frame img { display: block; width: 100%; height: auto; }
+.case-caption { margin-top: 12px; color: var(--ink-3); }
+
+.case-section { margin-top: clamp(80px, 10vw, 136px); }
+.case .section-title { font-size: clamp(1.875rem, 4.2vw, 3.25rem); }
+
+.case-prose { max-width: 68ch; }
+.case-prose p { margin-top: 20px; color: var(--ink-2); }
+.case-prose strong { color: var(--ink); font-weight: 560; }
+
+.case-list { margin-top: clamp(28px, 3vw, 44px); }
+.case-list li {
+  padding-block: 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  max-width: 76ch;
+}
+.case-list li strong { color: var(--ink); font-weight: 560; }
+
+.case-steps { margin-top: clamp(28px, 3vw, 44px); }
+.case-steps li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  padding-block: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.case-steps .num { color: var(--blue); padding-top: 3px; }
+.case-steps h3 { font-size: 1.125rem; font-weight: 600; font-stretch: 110%; }
+.case-steps p { margin-top: 6px; color: var(--ink-2); max-width: 66ch; }
+
+.case-gallery {
+  margin-top: clamp(32px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+}
+.case-gallery.phones { grid-template-columns: repeat(3, 1fr); }
+.case-gallery figure { margin: 0; }
+
+.case-next {
+  margin-top: clamp(88px, 11vw, 144px);
+  border-top: 1px solid var(--ink);
+  padding-block: clamp(32px, 4vw, 48px) 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.case-next .mono { color: var(--ink-3); }
+.case-next-link {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 620;
+  font-stretch: 113%;
+  letter-spacing: -0.015em;
+  transition: color 0.25s ease;
+}
+.case-next-link:hover { color: var(--blue); }
+
+@media (max-width: 1024px) {
+  .skill-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-meta { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .skill-grid { grid-template-columns: 1fr; }
+  .skill-items { margin-top: 20px; }
+  .case-gallery, .case-gallery.phones { grid-template-columns: 1fr; }
+  .case-gallery.phones { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+
 /* ------------------------------ Contact ------------------------------ */
 .contact {
   margin-top: clamp(120px, 14vw, 200px);

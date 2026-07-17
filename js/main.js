@@ -94,7 +94,7 @@
   }
 
   /* active section link */
-  const sectionIds = ["work", "practice", "about", "contact"];
+  const sectionIds = ["about", "skills", "now", "work", "contact"];
   const headLinks = new Map(
     [...document.querySelectorAll(".head-link")].map((a) => [a.getAttribute("href"), a])
   );

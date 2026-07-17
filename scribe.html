@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Scribe case study · Ethan Hennenhoefer</title>
+  <meta name="description" content="How Scribe turns Google Meet captions into a live, speaker-attributed transcript with a Claude-checked agenda: architecture, hard parts, and what I learned." />
+  <meta property="og:title" content="Scribe case study · Ethan Hennenhoefer" />
+  <meta property="og:description" content="A live meeting transcriber with a self-checking agenda. No bot in the call, no audio recorded." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://ethan.hennenhoefer.org/scribe.html" />
+  <meta property="og:image" content="https://ethan.hennenhoefer.org/assets/scribe-live.png" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,75..125,300..900;1,75..125,300..900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#case-top">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-tag mono" data-cursor-tag aria-hidden="true"><span data-cursor-text>View</span></div>
+
+  <header class="site-head" data-header>
+    <a class="wordmark" href="/">Ethan&nbsp;Hennenhoefer<span class="wordmark-dot" aria-hidden="true">.</span></a>
+    <p class="head-role mono" aria-hidden="true">Case study · Scribe</p>
+    <nav class="head-nav" aria-label="Primary">
+      <a href="/#about"   class="head-link mono">About</a>
+      <a href="/#skills"  class="head-link mono">Skills</a>
+      <a href="/#now"     class="head-link mono">Now</a>
+      <a href="/#work"    class="head-link mono">Work</a>
+      <a href="/#contact" class="head-link mono">Contact</a>
+    </nav>
+    <button class="menu-btn mono" data-menu-btn aria-expanded="false" aria-controls="site-menu">Menu</button>
+  </header>
+
+  <div class="menu" id="site-menu" data-menu hidden>
+    <nav class="menu-nav" aria-label="Menu">
+      <a href="/#about"   class="menu-link"><span class="menu-index mono">01</span>About</a>
+      <a href="/#skills"  class="menu-link"><span class="menu-index mono">02</span>Skills</a>
+      <a href="/#now"     class="menu-link"><span class="menu-index mono">03</span>Now</a>
+      <a href="/#work"    class="menu-link"><span class="menu-index mono">04</span>Work</a>
+      <a href="/#contact" class="menu-link"><span class="menu-index mono">05</span>Contact</a>
+    </nav>
+    <div class="menu-foot mono">
+      <a href="mailto:ethanai@hennenhoefer.org">ethanai@hennenhoefer.org</a>
+      <span data-clock-copy>Austin, TX</span>
+    </div>
+  </div>
+
+  <main class="case" id="case-top">
+
+    <p class="case-kicker mono" data-reveal>Case study 01</p>
+    <h1 class="case-title" data-reveal>Scribe</h1>
+    <p class="case-lede" data-reveal>
+      Scribe turns Google Meet's built&#8209;in captions into a live,
+      speaker&#8209;attributed transcript, and Claude checks your meeting
+      agenda off in real time with the quote that proves each item was
+      actually covered.
+    </p>
+
+    <dl class="case-meta" data-reveal>
+      <div><dt class="mono">Year</dt><dd>2026 · v1.9 · 18 releases</dd></div>
+      <div><dt class="mono">Role</dt><dd>Everything: design, build, ship</dd></div>
+      <div><dt class="mono">Stack</dt><dd>Chrome extension (MV3) · vanilla JS · Supabase · Vercel · Claude API</dd></div>
+      <div><dt class="mono">Live</dt><dd><a href="https://scribe-meets.vercel.app" target="_blank" rel="noopener">scribe-meets.vercel.app&thinsp;↗</a></dd></div>
+    </dl>
+
+    <figure class="case-hero" data-reveal>
+      <div class="case-frame">
+        <img src="assets/scribe-live.png" width="2880" height="1800"
+             alt="Scribe mid-meeting: live speaker-attributed transcript on the left, agenda on the right with six of ten items checked by Claude, each showing an evidence quote" />
+      </div>
+      <figcaption class="case-caption mono">Mid&#8209;meeting: live transcript, capturing status, and the agenda checking itself off</figcaption>
+    </figure>
+
+    <section class="case-section" aria-labelledby="scribe-problem">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>01</p>
+        <h2 class="section-title" id="scribe-problem"><span class="mask"><span class="mask-inner" data-reveal-title>The problem</span></span></h2>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+      <div class="case-prose" data-reveal>
+        <p>
+          Every meeting&#8209;transcription tool I could find fails at least one
+          of five constraints that matter in real client calls.
+        </p>
+      </div>
+      <ul class="case-list">
+        <li data-reveal><strong>Free.</strong> No paid APIs, no per&#8209;minute costs.</li>
+        <li data-reveal><strong>Zero friction for guests.</strong> Other participants click the Meet link like normal. They install nothing and sign into nothing.</li>
+        <li data-reveal><strong>Live.</strong> Sub&#8209;second, every word, streaming continuously. Not a file that shows up after the call.</li>
+        <li data-reveal><strong>Speaker&#8209;attributed.</strong> Who said what, with real names.</li>
+        <li data-reveal><strong>No bot.</strong> Nothing visible joins the call. Recorder bots make clients uncomfortable and get meetings off on the wrong foot.</li>
+      </ul>
+      <div class="case-prose" data-reveal>
+        <p>
+          The unlock: Google Meet's caption engine already does free,
+          real&#8209;time, speaker&#8209;labeled speech&#8209;to&#8209;text. A Chrome
+          extension can read that caption text straight out of the Meet page,
+          so the transcription work is already done. Scribe captures it,
+          streams it to the cloud, and builds intelligence on top.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="scribe-sidebar">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>02</p>
+        <h2 class="section-title" id="scribe-sidebar"><span class="mask"><span class="mask-inner" data-reveal-title>The in-Meet sidebar</span></span></h2>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+      <div class="case-prose" data-reveal>
+        <p>
+          You don't have to leave the call to see it working. The extension
+          injects a small agenda panel directly into the Google Meet page, so
+          items tick off in the corner of the meeting while you talk.
+          <strong>Only the host runs the extension</strong>, and everyone else
+          sees a completely normal call.
+        </p>
+      </div>
+      <figure class="case-hero" data-reveal>
+        <div class="case-frame">
+          <img src="assets/scribe/meet-sidebar.png" width="2804" height="1290" loading="lazy"
+               alt="A Google Meet call with Scribe's agenda panel injected on the right: five of ten items checked off live during the meeting" />
+        </div>
+        <figcaption class="case-caption mono">Live in Google Meet: the agenda ticks itself while the call runs</figcaption>
+      </figure>
+    </section>
+
+    <section class="case-section" aria-labelledby="scribe-how">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>03</p>
+        <h2 class="section-title" id="scribe-how"><span class="mask"><span class="mask-inner" data-reveal-title>How it works</span></span></h2>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+      <ol class="case-steps">
+        <li data-reveal>
+          <span class="num mono">01</span>
+          <div><h3>Capture</h3><p>A Manifest V3 content script watches the Meet caption DOM and emits every caption with its speaker name. It survives tab backgrounding via a chrome.alarms heartbeat and self&#8209;heals if Meet redraws the caption container.</p></div>
+        </li>
+        <li data-reveal>
+          <span class="num mono">02</span>
+          <div><h3>Stream</h3><p>The extension's service worker signs in to Supabase over plain REST and upserts each caption row. Partial captions and their final version merge into one row, and writes are serialized so a final can never be overtaken by an earlier partial.</p></div>
+        </li>
+        <li data-reveal>
+          <span class="num mono">03</span>
+          <div><h3>Render</h3><p>The web app is one dependency&#8209;free vanilla&#8209;JS page. It backfills the transcript with a single query, then subscribes to Supabase Realtime so new lines appear live, color&#8209;coded by speaker, with in&#8209;progress lines dimmed until finalized.</p></div>
+        </li>
+        <li data-reveal>
+          <span class="num mono">04</span>
+          <div><h3>Think</h3><p>A Vercel serverless function on a cron sends new transcript lines to Claude, which evaluates them against the agenda. When an item is genuinely covered, it gets checked with a confidence score and a verbatim evidence quote. A cheap anything&#8209;new check keeps API usage near zero.</p></div>
+        </li>
+        <li data-reveal>
+          <span class="num mono">05</span>
+          <div><h3>Own your data</h3><p>Every table is scoped by user with Postgres row&#8209;level security, so each account only ever sees its own meetings. Email auth with verification and password reset.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="case-section" aria-labelledby="scribe-shots">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>04</p>
+        <h2 class="section-title" id="scribe-shots"><span class="mask"><span class="mask-inner" data-reveal-title>Around the product</span></span></h2>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+      <div class="case-gallery">
+        <figure data-reveal>
+          <div class="case-frame"><img src="assets/scribe/landing.png" width="2880" height="1800" loading="lazy" alt="Scribe landing page: your meetings, transcribed and on track" /></div>
+          <figcaption class="case-caption mono">The landing page</figcaption>
+        </figure>
+        <figure data-reveal>
+          <div class="case-frame"><img src="assets/scribe/extension.png" width="2880" height="1800" loading="lazy" alt="Extension install page with a three-step illustrated guide" /></div>
+          <figcaption class="case-caption mono">Extension install guide</figcaption>
+        </figure>
+        <figure data-reveal>
+          <div class="case-frame"><img src="assets/scribe/new-account.png" width="2880" height="1800" loading="lazy" alt="A fresh Scribe account: seeded ten-item agenda and an empty transcript waiting for speech" /></div>
+          <figcaption class="case-caption mono">A fresh account, agenda seeded, waiting for speech</figcaption>
+        </figure>
+        <figure data-reveal>
+          <div class="case-frame"><img src="assets/scribe-live.png" width="2880" height="1800" loading="lazy" alt="The live meeting view with the agenda at six of ten" /></div>
+          <figcaption class="case-caption mono">The live view, mid&#8209;call</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="scribe-hard">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>05</p>
+        <h2 class="section-title" id="scribe-hard"><span class="mask"><span class="mask-inner" data-reveal-title>The hard parts</span></span></h2>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+      <ul class="case-list">
+        <li data-reveal><strong>Picking the approach.</strong> I built and rejected a working bot&#8209;based version first (a visible participant kills the vibe), and evaluated four other Google APIs. None were live, free, and invisible at once. Caption capture was the only path that satisfied all five constraints.</li>
+        <li data-reveal><strong>Partial vs. final captions.</strong> Meet fires captions incrementally, so each utterance has to upsert into a single row without a stale partial clobbering the final. Solved with a per&#8209;utterance conflict key and serialized writes.</li>
+        <li data-reveal><strong>Race&#8209;proofing auth.</strong> Concurrent logins could double&#8209;seed a new user's checklist and token refreshes could stampede. Fixed with single&#8209;flight guards and serialized auth sync.</li>
+        <li data-reveal><strong>Staying alive in a background tab.</strong> Chrome throttles timers hard. A chrome.alarms heartbeat plus picture&#8209;in&#8209;picture survival keeps capture running for the whole call.</li>
+        <li data-reveal><strong>Keeping Claude cheap.</strong> The eval cron reads only what changed since the last pass and skips the API call entirely when nothing new was said.</li>
+      </ul>
+      <div class="case-prose" data-reveal>
+        <p>
+          What I took away: the best solution came from deleting a working
+          version. The bot build functioned, but it failed the constraint that
+          actually mattered to users, and recognizing that early is what made
+          the final product feel obvious instead of clever.
+        </p>
+      </div>
+    </section>
+
+    <div class="case-next" data-reveal>
+      <span class="mono">Next case study</span>
+      <a class="case-next-link" href="onset.html">Onset&ensp;→</a>
+    </div>
+
+  </main>
+
+  <footer class="contact" id="contact" aria-labelledby="contact-title">
+    <p class="contact-kicker mono" data-reveal>Got a process that eats your week?</p>
+    <h2 class="contact-title" id="contact-title">
+      <span class="mask"><span class="mask-inner" data-reveal-title>Let’s automate&nbsp;it.</span></span>
+    </h2>
+    <div class="contact-actions" data-reveal>
+      <a class="btn btn-light" href="mailto:ethanai@hennenhoefer.org">
+        <span>ethanai@hennenhoefer.org</span>
+        <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5.5M13 3v7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+      </a>
+      <button class="btn btn-ghost" type="button" data-copy-email="ethanai@hennenhoefer.org">
+        <span data-copy-label>Copy email</span>
+      </button>
+    </div>
+    <div class="contact-links mono" data-reveal>
+      <a href="https://github.com/EthanH2004" target="_blank" rel="me noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/ethan-hennenhoefer/" target="_blank" rel="me noopener">LinkedIn</a>
+      <a href="assets/Ethan-Hennenhoefer-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+    <div class="contact-bottom mono">
+      <span>© 2026 Ethan Hennenhoefer</span>
+      <span class="contact-note">Designed &amp; built from scratch</span>
+      <span data-clock-copy>Austin, TX</span>
+      <a href="/" class="to-top">Back to portfolio&ensp;↖</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

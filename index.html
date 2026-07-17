@@ -7,10 +7,15 @@
   <title>Ethan Hennenhoefer · Software Engineer · AI · Data Science</title>
   <meta name="description" content="Software engineer and data scientist building AI systems that automate real business processes, plus the web, SaaS, and mobile products around them." />
 
-  <!-- Open Graph (TODO: add og:image once we have one) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Ethan Hennenhoefer · Software Engineer · AI · Data Science" />
   <meta property="og:description" content="AI systems that automate real business processes. Full-stack web, SaaS, and mobile." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ethanhennenhoefer.vercel.app/" />
+  <meta property="og:image" content="https://ethanhennenhoefer.vercel.app/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
@@ -251,57 +256,38 @@
       </header>
 
       <!-- ————— Project 01 · Scribe ————— -->
-      <article class="project" id="project-scribe" data-cursor="Case study soon">
-        <div class="project-media" data-reveal>
-          <div class="media-inner" data-parallax="8">
-            <!-- Browser mockup — replace the skeleton with a real screenshot later -->
-            <div class="browser">
-              <div class="browser-bar">
-                <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
-                <span class="b-url mono">scribe-meets.vercel.app</span>
-              </div>
-              <div class="browser-body">
-                <div class="b-side">
-                  <span class="sk sk-w60"></span>
-                  <span class="sk sk-w80"></span>
-                  <span class="sk sk-w70"></span>
-                  <span class="sk sk-w50"></span>
-                  <span class="sk sk-w75 sk-dim"></span>
-                  <span class="sk sk-w65 sk-dim"></span>
+      <article class="project" id="project-scribe">
+        <a class="project-media-link" href="https://scribe-meets.vercel.app" target="_blank"
+           rel="noopener" data-cursor="Visit site ↗"
+           aria-label="Open Scribe, the live meeting transcriber (new tab)">
+          <div class="project-media" data-reveal>
+            <div class="media-inner" data-parallax="8">
+              <div class="browser">
+                <div class="browser-bar">
+                  <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                  <span class="b-url mono">scribe-meets.vercel.app</span>
                 </div>
-                <div class="b-main">
-                  <div class="b-toprow">
-                    <span class="rec-pill mono"><span class="rec-dot" aria-hidden="true"></span>Recording</span>
-                    <div class="wave" aria-hidden="true">
-                      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
-                      ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-                    </div>
-                  </div>
-                  <span class="sk sk-h10 sk-w90"></span>
-                  <span class="sk sk-h10 sk-w100"></span>
-                  <span class="sk sk-h10 sk-w80"></span>
-                  <span class="sk sk-h10 sk-w95"></span>
-                  <span class="sk-space" aria-hidden="true"></span>
-                  <span class="sk sk-h10 sk-w85 sk-dim"></span>
-                  <span class="sk sk-h10 sk-w100 sk-dim"></span>
-                  <span class="sk sk-h10 sk-w70 sk-dim"></span>
-                  <span class="sk sk-h10 sk-w45 sk-dim"></span>
-                </div>
+                <img class="browser-shot" src="assets/scribe-live.png"
+                     alt="Scribe mid-meeting: a live speaker-attributed transcript on the left, and a 10-item agenda on the right with six items checked off by Claude, each showing the quote that proves it was covered"
+                     width="2880" height="1800" loading="lazy" />
               </div>
             </div>
-            <p class="slot-chip mono">Screenshot slot</p>
           </div>
-        </div>
+        </a>
 
         <div class="project-info">
           <div class="project-titlerow" data-reveal>
-            <h3 class="project-title">Scribe</h3>
-            <p class="project-meta mono">2025&ensp;·&ensp;AI&ensp;·&ensp;Product</p>
+            <h3 class="project-title"><a href="https://scribe-meets.vercel.app" target="_blank" rel="noopener">Scribe</a></h3>
+            <p class="project-meta mono">2026&ensp;·&ensp;AI&ensp;·&ensp;Product</p>
           </div>
           <p class="project-desc" data-reveal>
-            An AI scribe that turns conversations into clean, structured
-            documentation while you stay in the room. Full case study coming soon.
+            Scribe turns Google Meet captions into a live, speaker&#8209;attributed
+            transcript while Claude checks off the meeting agenda in real time,
+            citing the quote that proves each item was covered. No bot joins the
+            call and guests install nothing. Chrome extension, Supabase Realtime,
+            and serverless Claude evals, built end to end.
           </p>
+          <a class="project-link mono" data-reveal href="https://scribe-meets.vercel.app" target="_blank" rel="noopener">Visit scribe-meets.vercel.app&ensp;↗</a>
         </div>
       </article>
 

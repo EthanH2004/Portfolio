@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Ethan Hennenhoefer · Software Engineer · AI · Data Science</title>
+  <meta name="description" content="Software engineer and data scientist building AI systems that automate real business processes, plus the web, SaaS, and mobile products around them." />
+
+  <!-- Open Graph (TODO: add og:image once we have one) -->
+  <meta property="og:title" content="Ethan Hennenhoefer · Software Engineer · AI · Data Science" />
+  <meta property="og:description" content="AI systems that automate real business processes. Full-stack web, SaaS, and mobile." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts: Archivo (variable width+weight, display & body) + Fragment Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,75..125,300..900;1,75..125,300..900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <!-- Film-grain overlay: kills the "flat render" look. Purely decorative. -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Cursor-follow label (desktop, fine pointers only) -->
+  <div class="cursor-tag mono" data-cursor-tag aria-hidden="true"><span data-cursor-text>View</span></div>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-head" data-header>
+    <a class="wordmark" href="#top" data-scroll-to>Ethan&nbsp;Hennenhoefer<span class="wordmark-dot" aria-hidden="true">.</span></a>
+
+    <p class="head-role mono" aria-hidden="true">Software&nbsp;·&nbsp;AI&nbsp;·&nbsp;Data</p>
+
+    <nav class="head-nav" aria-label="Primary">
+      <a href="#about"    class="head-link mono" data-scroll-to>About</a>
+      <a href="#practice" class="head-link mono" data-scroll-to>Practice</a>
+      <a href="#work"     class="head-link mono" data-scroll-to>Work<sup>02</sup></a>
+      <a href="#contact"  class="head-link mono" data-scroll-to>Contact</a>
+    </nav>
+
+    <button class="menu-btn mono" data-menu-btn aria-expanded="false" aria-controls="site-menu">Menu</button>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="menu" id="site-menu" data-menu hidden>
+    <nav class="menu-nav" aria-label="Menu">
+      <a href="#about"    class="menu-link" data-scroll-to><span class="menu-index mono">01</span>About</a>
+      <a href="#practice" class="menu-link" data-scroll-to><span class="menu-index mono">02</span>Practice</a>
+      <a href="#work"     class="menu-link" data-scroll-to><span class="menu-index mono">03</span>Work</a>
+      <a href="#contact"  class="menu-link" data-scroll-to><span class="menu-index mono">04</span>Contact</a>
+    </nav>
+    <div class="menu-foot mono">
+      <a href="mailto:ethanai@hennenhoefer.org">ethanai@hennenhoefer.org</a>
+      <span data-clock-copy>Local 00:00</span>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" aria-label="Introduction">
+      <p class="hero-kicker mono" data-intro-fade>
+        Software Engineer&ensp;/&ensp;AI Engineer&ensp;/&ensp;Data Scientist
+      </p>
+
+      <h1 class="hero-name" data-fit-name aria-label="Ethan Hennenhoefer">
+        <span class="mask" aria-hidden="true"><span class="mask-inner name-line-1" data-intro-line><span>Ethan</span><span class="name-note mono">(Portfolio&ensp;’26)</span></span></span>
+        <span class="mask name-d" aria-hidden="true"><span class="mask-inner" data-fit-long data-intro-line>Hennenhoefer</span></span>
+        <span class="mask name-m" aria-hidden="true"><span class="mask-inner" data-fit-long-m data-intro-line>Hennen-</span></span>
+        <span class="mask name-m" aria-hidden="true"><span class="mask-inner" data-intro-line>hoefer</span></span>
+      </h1>
+
+      <div class="hero-lower">
+        <p class="hero-summary" data-intro-fade>
+          I build software that takes busywork off people's plates. AI systems
+          that automate real business processes, plus the websites, SaaS
+          products, and mobile apps around them.
+        </p>
+
+        <div class="hero-meta" data-intro-fade>
+          <p class="meta-row mono"><span class="status-dot" aria-hidden="true"></span>Open to new projects</p>
+          <p class="meta-row mono">Based in <span class="meta-value">Austin, Texas</span></p>
+          <p class="meta-row mono">Local time <span class="meta-value" data-clock>00:00</span></p>
+          <p class="meta-row mono">Currently <span class="meta-value">Independent AI consultant</span></p>
+        </div>
+      </div>
+
+      <div class="hero-scroll mono" data-intro-fade aria-hidden="true">
+        <span>Scroll</span>
+        <span class="scroll-line"><span class="scroll-line-inner"></span></span>
+      </div>
+    </section>
+
+    <!-- ============================== MARQUEE ============================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" data-marquee>
+        <!-- duplicated in JS for seamless loop -->
+        <span class="marquee-chunk">
+          Process&nbsp;Automation&ensp;·&ensp;Claude&ensp;·&ensp;Full&#8209;Stack&ensp;·&ensp;SaaS&ensp;·&ensp;Mobile&ensp;·&ensp;Data&nbsp;Science&ensp;·&ensp;
+        </span>
+        <span class="marquee-chunk">
+          Process&nbsp;Automation&ensp;·&ensp;Claude&ensp;·&ensp;Full&#8209;Stack&ensp;·&ensp;SaaS&ensp;·&ensp;Mobile&ensp;·&ensp;Data&nbsp;Science&ensp;·&ensp;
+        </span>
+      </div>
+    </div>
+
+<section class="section about" id="about" aria-labelledby="about-title">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>01</p>
+        <h2 class="section-title" id="about-title"><span class="mask"><span class="mask-inner" data-reveal-title>About</span></span></h2>
+        <p class="section-count mono" data-reveal>( Ethan )</p>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+
+      <div class="about-grid">
+        <div class="portrait" data-reveal>
+          <div class="portrait-frame">
+            <img class="portrait-img" src="assets/portrait.jpg" data-parallax="5"
+                 alt="Ethan Hennenhoefer standing in a sunlit brick archway"
+                 width="1300" height="1950" loading="lazy" />
+          </div>
+          <p class="portrait-caption mono">Ethan Hennenhoefer · fig. 01</p>
+        </div>
+
+        <div class="about-body">
+          <p class="about-lede" data-reveal>
+            I get a genuine kick out of making computers do the boring parts
+            of a job, so people can do the interesting parts.
+          </p>
+          <p class="about-copy" data-reveal>
+            I’m a software engineer and data scientist. Most days you’ll find
+            me wiring Claude into a business process that used to eat
+            someone’s afternoon, or building the product around it: websites,
+            SaaS platforms, and mobile apps, end to end.
+          </p>
+          <p class="about-copy" data-reveal>
+            I like small teams, sharp scopes, and software that quietly earns
+            its keep. If it saves an hour a day, it was worth building well.
+          </p>
+
+          <dl class="toolbox" data-reveal>
+            <div class="tool-col">
+              <dt class="mono">AI / ML</dt>
+              <dd>Claude&nbsp;API · Agents · RAG · Python</dd>
+            </div>
+            <div class="tool-col">
+              <dt class="mono">Web</dt>
+              <dd>TypeScript · React · Next.js · Node</dd>
+            </div>
+            <div class="tool-col">
+              <dt class="mono">Mobile</dt>
+              <dd>Swift · SwiftUI · React&nbsp;Native</dd>
+            </div>
+            <div class="tool-col">
+              <dt class="mono">Data</dt>
+              <dd>Python · SQL · pandas · dashboards</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+<section class="section practice" id="practice" aria-labelledby="practice-title">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>02</p>
+        <h2 class="section-title" id="practice-title"><span class="mask"><span class="mask-inner" data-reveal-title>The Practice</span></span></h2>
+        <p class="section-count mono" data-reveal>( AI Consulting )</p>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+
+      <div class="practice-grid">
+        <div class="practice-intro">
+          <div class="practice-sticky">
+            <h3 class="practice-lede" data-reveal>AI that actually does the&nbsp;work.</h3>
+            <p class="practice-copy" data-reveal>
+              Through my consulting practice I help companies hand repetitive
+              processes over to AI. I map the workflow, automate it with
+              Claude, and ship it as a tool your team actually uses.
+            </p>
+            <a class="btn" href="mailto:ethanai@hennenhoefer.org?subject=Automation%20project" data-reveal>
+              <span>Start a conversation</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5.5M13 3v7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <ul class="service-list">
+          <li class="service" data-reveal>
+            <span class="service-index mono">01</span>
+            <div class="service-body">
+              <h4 class="service-title">Process Automation</h4>
+              <p class="service-desc">Claude&#8209;powered agents and pipelines that take over the repetitive work: documents, data entry, reporting, operations.</p>
+            </div>
+          </li>
+          <li class="service" data-reveal>
+            <span class="service-index mono">02</span>
+            <div class="service-body">
+              <h4 class="service-title">Product Engineering</h4>
+              <p class="service-desc">Full websites and SaaS apps, from the first wireframe to a deployed product with real users.</p>
+            </div>
+          </li>
+          <li class="service" data-reveal>
+            <span class="service-index mono">03</span>
+            <div class="service-body">
+              <h4 class="service-title">Mobile Apps</h4>
+              <p class="service-desc">Clean, native&#8209;feeling apps for iOS and Android.</p>
+            </div>
+          </li>
+          <li class="service" data-reveal>
+            <span class="service-index mono">04</span>
+            <div class="service-body">
+              <h4 class="service-title">Data Science</h4>
+              <p class="service-desc">Models, dashboards, and pipelines that turn the data you already have into decisions.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- How an engagement runs -->
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <p class="step-index mono">Step&ensp;1</p>
+          <h4 class="step-title">Map</h4>
+          <p class="step-desc">We sit with your team and find the hours that repeat every week.</p>
+        </li>
+        <li class="step" data-reveal>
+          <p class="step-index mono">Step&ensp;2</p>
+          <h4 class="step-title">Automate</h4>
+          <p class="step-desc">I build the system, with Claude in the loop and humans handling the exceptions.</p>
+        </li>
+        <li class="step" data-reveal>
+          <p class="step-index mono">Step&ensp;3</p>
+          <h4 class="step-title">Ship &amp; run</h4>
+          <p class="step-desc">Your team gets a tool, not a slide deck. I stay until it sticks.</p>
+        </li>
+      </ol>
+    </section>
+
+<section class="section work" id="work" aria-labelledby="work-title">
+      <header class="section-head">
+        <p class="section-index mono" data-reveal>03</p>
+        <h2 class="section-title" id="work-title"><span class="mask"><span class="mask-inner" data-reveal-title>Selected Work</span></span></h2>
+        <p class="section-count mono" data-reveal>( 02 )</p>
+        <span class="section-rule" data-rule aria-hidden="true"></span>
+      </header>
+
+      <!-- ————— Project 01 · Scribe ————— -->
+      <article class="project" id="project-scribe" data-cursor="Case study soon">
+        <div class="project-media" data-reveal>
+          <div class="media-inner" data-parallax="8">
+            <!-- Browser mockup — replace the skeleton with a real screenshot later -->
+            <div class="browser">
+              <div class="browser-bar">
+                <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                <span class="b-url mono">scribe-meets.vercel.app</span>
+              </div>
+              <div class="browser-body">
+                <div class="b-side">
+                  <span class="sk sk-w60"></span>
+                  <span class="sk sk-w80"></span>
+                  <span class="sk sk-w70"></span>
+                  <span class="sk sk-w50"></span>
+                  <span class="sk sk-w75 sk-dim"></span>
+                  <span class="sk sk-w65 sk-dim"></span>
+                </div>
+                <div class="b-main">
+                  <div class="b-toprow">
+                    <span class="rec-pill mono"><span class="rec-dot" aria-hidden="true"></span>Recording</span>
+                    <div class="wave" aria-hidden="true">
+                      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                      ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                  </div>
+                  <span class="sk sk-h10 sk-w90"></span>
+                  <span class="sk sk-h10 sk-w100"></span>
+                  <span class="sk sk-h10 sk-w80"></span>
+                  <span class="sk sk-h10 sk-w95"></span>
+                  <span class="sk-space" aria-hidden="true"></span>
+                  <span class="sk sk-h10 sk-w85 sk-dim"></span>
+                  <span class="sk sk-h10 sk-w100 sk-dim"></span>
+                  <span class="sk sk-h10 sk-w70 sk-dim"></span>
+                  <span class="sk sk-h10 sk-w45 sk-dim"></span>
+                </div>
+              </div>
+            </div>
+            <p class="slot-chip mono">Screenshot slot</p>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-titlerow" data-reveal>
+            <h3 class="project-title">Scribe</h3>
+            <p class="project-meta mono">2025&ensp;·&ensp;AI&ensp;·&ensp;Product</p>
+          </div>
+          <p class="project-desc" data-reveal>
+            An AI scribe that turns conversations into clean, structured
+            documentation while you stay in the room. Full case study coming soon.
+          </p>
+        </div>
+      </article>
+
+      <!-- ————— Project 02 · Workout app ————— -->
+      <article class="project" id="project-workout" data-cursor="Case study soon">
+        <div class="project-media" data-reveal>
+          <div class="media-inner media-dark">
+            <div class="phones">
+              <!-- Phone 1 -->
+              <div class="phone" data-phone="-1">
+                <div class="phone-screen">
+                  <span class="p-island" aria-hidden="true"></span>
+                  <p class="p-label mono">Today</p>
+                  <div class="p-ring" aria-hidden="true">
+                    <svg viewBox="0 0 100 100" fill="none">
+                      <circle cx="50" cy="50" r="42" class="ring-track"/>
+                      <circle cx="50" cy="50" r="42" class="ring-fill" pathLength="100"/>
+                    </svg>
+                  </div>
+                  <span class="sk sk-light sk-w70"></span>
+                  <span class="sk sk-light sk-w50"></span>
+                </div>
+              </div>
+              <!-- Phone 2 (center) -->
+              <div class="phone phone-center" data-phone="0">
+                <div class="phone-screen">
+                  <span class="p-island" aria-hidden="true"></span>
+                  <p class="p-label mono">Session</p>
+                  <div class="p-bars" aria-hidden="true">
+                    <i style="--h:.45"></i><i style="--h:.7"></i><i style="--h:.55"></i><i style="--h:.9"></i><i style="--h:.65"></i><i style="--h:1"></i><i style="--h:.8"></i>
+                  </div>
+                  <span class="sk sk-light sk-w80"></span>
+                  <span class="sk sk-light sk-w60"></span>
+                  <span class="sk sk-light sk-w70 sk-dim"></span>
+                </div>
+              </div>
+              <!-- Phone 3 -->
+              <div class="phone" data-phone="1">
+                <div class="phone-screen">
+                  <span class="p-island" aria-hidden="true"></span>
+                  <p class="p-label mono">Progress</p>
+                  <div class="p-rows" aria-hidden="true">
+                    <span class="sk sk-light sk-w90"></span>
+                    <span class="sk sk-light sk-w75"></span>
+                    <span class="sk sk-light sk-w85"></span>
+                    <span class="sk sk-light sk-w65"></span>
+                    <span class="sk sk-light sk-w80 sk-dim"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="slot-chip slot-chip-light mono">Screenshot slots × 3</p>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-titlerow" data-reveal>
+            <h3 class="project-title">Workout App</h3>
+            <p class="project-meta mono">2024&ensp;·&ensp;iOS&ensp;·&ensp;Mobile</p>
+          </div>
+          <p class="project-desc" data-reveal>
+            A training tracker that makes logging a workout quick enough that
+            you actually do it. Real name and screenshots coming soon.
+          </p>
+        </div>
+      </article>
+
+      <p class="work-more mono" data-reveal>More projects on the way. Ask me what I’m building right now.</p>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <footer class="contact" id="contact" aria-labelledby="contact-title">
+      <p class="contact-kicker mono" data-reveal>Got a process that eats your week?</p>
+      <h2 class="contact-title" id="contact-title">
+        <span class="mask"><span class="mask-inner" data-reveal-title>Let’s automate&nbsp;it.</span></span>
+      </h2>
+
+      <div class="contact-actions" data-reveal>
+        <a class="btn btn-light" href="mailto:ethanai@hennenhoefer.org">
+          <span>ethanai@hennenhoefer.org</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5.5M13 3v7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+        </a>
+        <button class="btn btn-ghost" type="button" data-copy-email="ethanai@hennenhoefer.org">
+          <span data-copy-label>Copy email</span>
+        </button>
+      </div>
+
+      <div class="contact-links mono" data-reveal>
+        <a href="https://github.com/EthanH2004" target="_blank" rel="me noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/ethan-hennenhoefer/" target="_blank" rel="me noopener">LinkedIn</a>
+      </div>
+
+      <div class="contact-bottom mono">
+        <span>© 2026 Ethan Hennenhoefer</span>
+        <span class="contact-note">Designed &amp; built from scratch</span>
+        <span data-clock-copy>Local 00:00</span>
+        <a href="#top" class="to-top" data-scroll-to>Back to top&ensp;↑</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Motion stack (site is fully readable without it) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{"ts":"2026-07-17T04:03:02.143Z","cmd":"status","args":"","origin":"about:blank","durationMs":2,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-17T04:03:22.417Z","cmd":"cookie-import-browser","args":"--help","origin":"about:blank","durationMs":5,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-17T04:03:22.471Z","cmd":"cookie-import-browser","args":"--list","origin":"about:blank","durationMs":0,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-17T04:03:34.367Z","cmd":"cookie-import-browser","args":"chrome --domain scribe-meets.vercel.app","origin":"about:blank","durationMs":1,"status":"error","hasCookies":false,"mode":"launched","error":"--domain \"scribe-meets.vercel.app\" does not match current page domain \"\". Navigate to the target site first."}
+{"ts":"2026-07-17T04:03:34.410Z","cmd":"cookies","args":"","origin":"about:blank","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-17T04:03:55.430Z","cmd":"goto","args":"https://scribe-meets.vercel.app/","origin":"https://scribe-meets.vercel.app/","durationMs":381,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-17T04:03:55.504Z","cmd":"cookie-import-browser","args":"chrome --domain scribe-meets.vercel.app","origin":"https://scribe-meets.vercel.app/","durationMs":23,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-17T04:03:55.548Z","cmd":"cookies","args":"","origin":"https://scribe-meets.vercel.app/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}

@@ -1,0 +1,4 @@
+[2026-07-17T04:03:55.081Z] GET https://scribe-meets.vercel.app/ → 200 (192ms, 12831B)
+[2026-07-17T04:03:55.277Z] GET https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap → pending (?ms, ?B)
+[2026-07-17T04:03:55.277Z] GET https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2 → pending (?ms, ?B)
+[2026-07-17T04:03:55.429Z] GET https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2 → 200 (148ms, 48983B)

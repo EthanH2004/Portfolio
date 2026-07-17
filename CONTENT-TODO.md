@@ -22,11 +22,11 @@ holding placeholder content. All in `index.html` unless noted.
 ## Copy that is plausible-but-placeholder
 - [x] Scribe description + meta — real copy from the product write-up (2026 · AI · Product)
 - [x] Workout app real name + copy — it's **Onset** (2026 · iOS · Mobile)
-- [ ] Practice section blurb + the four service descriptions — tune to the real offer
-- [ ] "Map / Automate / Ship & run" step copy
-- [ ] About bio (2 paragraphs + lede) — written in Ethan's probable voice, verify
-- [ ] Toolbox stacks (AI/Web/Mobile/Data lists) — confirm actual tools
-- [ ] Hero meta: "Open to select projects", "Currently — Independent AI consultant"
+- [x] Now section — rewritten from Ethan's real current work (fact-checked by Ethan)
+- [x] "Map / Automate / Ship & run" step copy — kept, approved
+- [x] About bio + lede — rewritten and approved by Ethan
+- [x] Skills section — built from resume, corrected by Ethan (pandas, Tableau, Docker added; coursework fixed)
+- [x] Hero meta — approved
 
 ## Links
 - [x] GitHub (github.com/EthanH2004) + LinkedIn (linkedin.com/in/ethan-hennenhoefer) — done; X removed per Ethan
